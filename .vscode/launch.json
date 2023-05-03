@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "asd",
+            "request": "launch",
+            "mainClass": "asd",
+            "projectName": "Java_4e35e324"
+        },
+        {
+            "type": "java",
             "name": "Brand",
             "request": "launch",
             "mainClass": "Brand",
