@@ -46,7 +46,7 @@ public class BCCI_System {
         input.close();
     }
 
-    public static double incomeTax(double empSal) {
+     static double incomeTax(double empSal) {
         double sal = empSal * 12;
         double resultTax = 0;
         
@@ -67,7 +67,7 @@ public class BCCI_System {
         return resultTax;
     }
 
-    public static int getSSSContribution(double ms) {
+     static int getSSSContribution(double ms) {
         int sss_contri = 0;
         
         if (ms < 2249.99) {
@@ -149,7 +149,7 @@ public class BCCI_System {
         return sss_contri;
     }
 
-    public static double getPagIbig(double ms) {
+     static double getPagIbig(double ms) {
         double pag_ibig = 0.0;
         
         if (ms <= 1500) {
@@ -163,7 +163,7 @@ public class BCCI_System {
         return pag_ibig;
     }
 
-    public static double getPhilHealth(double ms) {
+     static double getPhilHealth(double ms) {
         double phil_health = 0.0;
         
         if (ms <= 8999.99) {

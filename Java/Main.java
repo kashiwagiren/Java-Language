@@ -1,18 +1,15 @@
 public class Main {
-    // Static method
-    static void myStaticMethod() {
-      System.out.println("Static methods can be called without creating objects");
-    }
-    // Public method
-    public void myPublicMethod() {
-      System.out.println("Public methods must be called by creating objects");
-    }
-    // Main method
-    public static void main(String[ ] args) {
-        myStaticMethod(); // Call the static method
-        // myPublicMethod(); This would output an error
+  public static void main(String[] args) {
+    float first = 1.20f, second = 2.45f;
+    System.out.println("--Before swap--");
+    System.out.println("First number = " + first);
+    System.out.println("Second number = " + second);
+    float temporary = first;
+    first = second;
+    second = temporary;
+    System.out.println("--After swap--");
+    System.out.println("First number = " + first);
+    System.out.println("Second number = " + second);
+}
 
-        Main myObj = new Main(); // Create an object of Main
-        myObj.myPublicMethod(); // Call the public method
-  }
 }
