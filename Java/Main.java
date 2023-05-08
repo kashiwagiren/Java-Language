@@ -1,15 +1,14 @@
 public class Main {
   public static void main(String[] args) {
-    float first = 1.20f, second = 2.45f;
-    System.out.println("--Before swap--");
-    System.out.println("First number = " + first);
-    System.out.println("Second number = " + second);
-    float temporary = first;
-    first = second;
-    second = temporary;
-    System.out.println("--After swap--");
-    System.out.println("First number = " + first);
-    System.out.println("Second number = " + second);
-}
 
+    int n = 10, firstTerm = 0, secondTerm = 1;
+    System.out.println("Fibonacci Series till " + n + " terms:");
+
+    for (int i = 1; i <= n; ++i) {
+      System.out.print(firstTerm + ", ");
+      int nextTerm = firstTerm + secondTerm;
+      firstTerm = secondTerm;
+      secondTerm = nextTerm;
+    }
+  }
 }
