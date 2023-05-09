@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "mainQuiz",
+            "request": "launch",
+            "mainClass": "mainQuiz",
+            "projectName": "Java_4e35e324"
+        },
+        {
+            "type": "java",
             "name": "quiz",
             "request": "launch",
             "mainClass": "quiz",
