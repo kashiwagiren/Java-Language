@@ -194,10 +194,10 @@ public static void gameQuestions(int level) {
             System.out.print("\033[H\033[2J");
             System.out.flush();
             String[] questions = { "" + (colorsEnabled ? "\u001B[92mEasy level.\u001B[0m" : "Easy level.") + "\nWhat does 'printf' do?\n\na) Reads input from the user\n" + (cheatsEnabled ? "\u001B[31mb\u001B[0m" : "b") + ") Prints output to the console\nc) Performs mathematical calculations\n",
-                                   "\n What is the use for Scanner?\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") breaks its input into tokens using a delimiter pattern, which by default matches whitespace\nb) It is a standard input, standard output, and error output streams\nc) their values cannot be changed after they are created\n",
-                                   "\n The String class represents?\n\na) output\n" + (cheatsEnabled ? "\u001B[31mb\u001B[0m" : "b") + ") character strings\nc) input\n",
-                                   "\n The System class contains what?\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") several useful class fields and methods\nb) a delimiter pattern\nc) whitespaces\n",
-                                   "\n What is the purpose of:\n\n\t" + (colorsEnabled ? "\u001B[36mSystem.out.flush();\u001B[0m" : "System.out.flush();") + "\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") Flushes the stream\nb) Flushes the output\nc) Reads input from the user\n" };
+                                   "" + (colorsEnabled ? "\u001B[92mEasy level.\u001B[0m" : "Easy level.") + "\nWhat is the use for Scanner?\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") breaks its input into tokens using a delimiter pattern, which by default matches whitespace\nb) It is a standard input, standard output, and error output streams\nc) their values cannot be changed after they are created\n",
+                                   "" + (colorsEnabled ? "\u001B[92mEasy level.\u001B[0m" : "Easy level.") + "\nThe String class represents?\n\na) output\n" + (cheatsEnabled ? "\u001B[31mb\u001B[0m" : "b") + ") character strings\nc) input\n",
+                                   "" + (colorsEnabled ? "\u001B[92mEasy level.\u001B[0m" : "Easy level.") + "\nThe System class contains what?\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") several useful class fields and methods\nb) a delimiter pattern\nc) whitespaces\n",
+                                   "" + (colorsEnabled ? "\u001B[92mEasy level.\u001B[0m" : "Easy level.") + "\nWhat is the purpose of:\n\n\t" + (colorsEnabled ? "\u001B[36mSystem.out.flush();\u001B[0m" : "System.out.flush();") + "\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") Flushes the stream\nb) Flushes the output\nc) Reads input from the user\n" };
             char[] answers = { 'b', 'a', 'b', 'a', 'a' };
 
             for (int i = 0; i < questions.length; i++) {
@@ -249,10 +249,14 @@ public static void gameQuestions(int level) {
             System.out.print("\033[H\033[2J");
             System.out.flush();
             String[] questions1 = { "" + (colorsEnabled ? "\u001B[94mNormal level.\u001B[0m" : "Normal level.") + "\nWhat is the default value of a boolean variable in Java?\n\na) null\n" + (cheatsEnabled ? "\u001B[31mb\u001B[0m" : "b") + ") false\nc) true\n",
-                                    "\nWhich method signature is correct for the main method in a Java program?\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") public static void main(String[] args)\nb) public void main(String[] args)\nc) public static void main(String args[])\n",
-                                    "\nWhat is the output of the following code?\n\n\t" + (colorsEnabled ? "\u001B[96mclass\u001B[0m Test \u001B[93m{\u001B[0m\n\t\t\u001B[96mpublic static void\u001B[0m main\u001B[95m(\u001B[0m\u001B[96mString\u001B[0m\u001B[34m[]\u001B[0m args\u001B[95m) {\u001B[0m\n\t\t\t\u001B[96mint\u001B[0m x = \u001B[92m10\u001B[0m;\n\t\t\t\u001B[96mint\u001B[0m y = \u001B[92m5\u001B[0m;\n\t\t\tx = x + y;\n\t\t\ty = x - y;\n\t\t\tx = x - y;\n\t\t\tSystem.out.println(\"x = \" + x + \", y = \" + y);\n\t\t\u001B[95m}\u001B[0m\n\t\u001B[93m}\u001B[0m" : "class Test {\n\t\tpublic static void main(String[] args) {\n\t\t\tint x = 10;\n\t\t\tint y = 5;\n\t\t\tx = x + y;\n\t\t\ty = x - y;\n\t\t\tx = x - y;\n\t\t\tSystem.out.println(\"x = \" + x + \", y = \" + y);\n\t\t}\n\t}") + "\n\na) x = 10, y = 5\n" + (cheatsEnabled ? "\u001B[31mb\u001B[0m" : "b") + ") x = 5, y = 10\nc) x = 15, y = 0\n",
-                                    "\nTo use a class or package from the library, you need to use the important keyword:\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") syntax\nb) class\nc) package\n", };
-            char[] answers1 = { 'b', 'a', 'b', 'a' };
+                                    "" + (colorsEnabled ? "\u001B[94mNormal level.\u001B[0m" : "Normal level.") + "\nWhich method signature is correct for the main method in a Java program?\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") public static void main(String[] args)\nb) public void main(String[] args)\nc) public static void main(String args[])\n",
+                                    "" + (colorsEnabled ? "\u001B[94mNormal level.\u001B[0m" : "Normal level.") + "\nTo use a class or package from the library, you need to use the important keyword:\n\n" + (cheatsEnabled ? "\u001B[31ma\u001B[0m" : "a") + ") syntax\nb) class\nc) package\n",
+                                    "" + (colorsEnabled ? "\u001B[94mNormal level.\u001B[0m" : "Normal level.") + "\nOOP stands for?\n\na) Oriented-Object Programming\n" + (cheatsEnabled ? "\u001B[31mb\u001B[0m" : "b") + ") Object-Oriented Programming\nc) Operation-Oriented Programming\n",
+                                    "" + (colorsEnabled ? "\u001B[94mNormal level.\u001B[0m" : "Normal level.") + "\nWhich of the following is not a primitive data type in Java?\n\na) int\nb) char\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") String\n",
+                                    "" + (colorsEnabled ? "\u001B[94mNormal level.\u001B[0m" : "Normal level.") + "\nWhich Java feature allows us to run the code on different types of machines?\n\na) Robustness\nb) Platform Independence\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") Multithreading\n",
+                                    "" + (colorsEnabled ? "\u001B[94mNormal level.\u001B[0m" : "Normal level.") + "\nWhat is the output of the following code?\n\n\t" + (colorsEnabled ? "\u001B[96mclass\u001B[0m Test \u001B[93m{\u001B[0m\n\t\t\u001B[96mpublic static void\u001B[0m main\u001B[95m(\u001B[0m\u001B[96mString\u001B[0m\u001B[34m[]\u001B[0m args\u001B[95m) {\u001B[0m\n\t\t\t\u001B[96mint\u001B[0m x = \u001B[92m10\u001B[0m;\n\t\t\t\u001B[96mint\u001B[0m y = \u001B[92m5\u001B[0m;\n\t\t\tx = x + y;\n\t\t\ty = x - y;\n\t\t\tx = x - y;\n\t\t\tSystem.out.println(\"x = \" + x + \", y = \" + y);\n\t\t\u001B[95m}\u001B[0m\n\t\u001B[93m}\u001B[0m" : "class Test {\n\t\tpublic static void main(String[] args) {\n\t\t\tint x = 10;\n\t\t\tint y = 5;\n\t\t\tx = x + y;\n\t\t\ty = x - y;\n\t\t\tx = x - y;\n\t\t\tSystem.out.println(\"x = \" + x + \", y = \" + y);\n\t\t}\n\t}") + "\n\na) x = 10, y = 5\n" + (cheatsEnabled ? "\u001B[31mb\u001B[0m" : "b") + ") x = 5, y = 10\nc) x = 15, y = 0\n",
+                                     };
+            char[] answers1 = { 'b', 'a', 'a', 'b', 'c', 'c', 'b' };
             for (int i = 0; i < questions1.length; i++) {
                 while (true) {
                     System.out.print("\033[H\033[2J");
@@ -300,8 +304,12 @@ public static void gameQuestions(int level) {
         case 3:
             System.out.print("\033[H\033[2J");
             System.out.flush();
-            String[] questions2 = { "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\n" };
-            char[] answers2 = { 'b' };
+            String[] questions2 = { "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\nWhat is the size of int data type in Java?\n\na) 8 bits\nb) 16 bits\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") 32 bits\n",
+                                    "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\nWhich of the following is not a Java keyword?\n\na) volatile\nb) import\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") print\n",
+                                    "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\nWhat does the default constructor return?\n\na) int\nb) float\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") void\n",
+                                    "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\nWhich of these is a valid method signature in Java?\n\na) public int myMethod()\nb) int myMethod()\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") public void myMethod(int a, String b)\n",
+                                    "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\nWhich of these is not a correct way to declare and initialize an array in Java?\n\na) int[] arr = new int[5];\nb) int arr[] = {1, 2, 3, 4, 5};\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") int arr[5];\n", };
+            char[] answers2 = { 'c', 'c', 'c', 'c', 'c' };
             for (int i = 0; i < questions2.length; i++) {
                 while (true) {
                     System.out.print("\033[H\033[2J");
