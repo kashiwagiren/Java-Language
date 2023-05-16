@@ -476,6 +476,7 @@ public static void levelProceed(int level) {
                     attempts--;
                     score = 0;
                     total_questions = 0;
+                    scoreViewing = 0;
                     gameQuestions((level % 3) + 1); 
                     break;
                 } else if (choice == 'n') {
