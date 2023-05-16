@@ -10,7 +10,8 @@ class mainQuiz {
     public static Scanner scanner = new Scanner(System.in);
     
     private static final String ASCII_ART = " ____  _     _  ____    _____ ____  _      _____\n/  _ \\/ \\ /\\/ \\/_   \\  /  __//  _ \\/ \\__/|/  __/\n| / \\|| | ||| | /   /  | |  _| / \\/|| |\\/|||  \\  \n| \\_\\|| \\_/|| |/   /_  | |_//| |-||| |  |||  /_ \n\\____\\\\____/\\_/\\____/  \\____\\\\_/ \\|\\_/  \\|\\____\\";
-    
+    public static final int PASSING_SCORE_PER_LEVEL = 3;
+
     public static void main(String[] args) {
         char choice;
         
@@ -312,7 +313,7 @@ public static void gameQuestions(int level) {
         case 3:
             System.out.print("\033[H\033[2J");
             System.out.flush();
-            String[] questions2 = { "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\n\n1. What is the output of the following code?\n\n\t int x = 0;\n\t int y = 10;\n\t while (x < y) {\n\t\t y--;\n\t\t ++x;\n\t }\n\t System.out.println(x + \", \" + y);\n\na) 5, 5\nb) 5, 6\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") 6, 4\n",
+            String[] questions2 = { "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\n\n1. What is the output of the following code?\n\n\t " + (colorsEnabled ? "\u001B[96mint\u001B[0m x = \u001B[92m0\u001B[0m;\n\t \u001B[96mint\u001B[0m y = \u001B[92m10\u001B[0m;\n\t \u001B[95mwhile\u001B[0m \u001B[93m(\u001B[0mx < y\u001B[93m) {\u001B[0m\n\t\t y--;\n\t\t ++x;\n\t \u001B[93m}\u001B[0m\n\t System.out.println(x + \", \" + y);" : "int x = 0;\n\t int y = 10;\n\t while (x < y) {\n\t\t y--;\n\t\t ++x;\n\t }\n\t System.out.println(x + \", \" + y);") + "\n\na) 5, 5\nb) 5, 6\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") 6, 4\n",
                                     "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\n\n2. Which of the following is not a Java keyword?\n\na) volatile\nb) import\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") print\n",
                                     "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\n\n3. What does the default constructor return?\n\na) int\nb) float\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") void\n",
                                     "" + (colorsEnabled ? "\u001B[91mHard level.\u001B[0m" : "Hard level.") + "\n\n4. Which of these is a valid method signature in Java?\n\na) public int myMethod()\nb) int myMethod()\n" + (cheatsEnabled ? "\u001B[31mc\u001B[0m" : "c") + ") public void myMethod(int a, String b)\n",
@@ -405,7 +406,7 @@ public static void easyGame(int level) {
                 gameQuestions(2);
                 break;
             } else if (choice != 'n' && choice != 'y') {
-                System.out.println("\nInvalid.");
+                System.out.println("\n" + (colorsEnabled ? "\u001B[91mInvalid.\u001B[0m" : "Invalid.") + "");
                 try {
                     Thread.sleep(1500);
                 } catch (InterruptedException e) {
@@ -441,7 +442,7 @@ public static void normalGame(int level) {
                 gameQuestions(3);
                 break;
             } else if (choice != 'n' && choice != 'y') {
-                System.out.println("\nInvalid.");
+                System.out.println("\n" + (colorsEnabled ? "\u001B[91mInvalid.\u001B[0m" : "Invalid.") + "");
                 try {
                     Thread.sleep(1500);
                 } catch (InterruptedException e) {
@@ -476,7 +477,6 @@ public static void levelProceed(int level) {
                     attempts--;
                     score = 0;
                     total_questions = 0;
-                    scoreViewing = 0;
                     gameQuestions((level % 3) + 1); 
                     break;
                 } else if (choice == 'n') {
@@ -611,7 +611,7 @@ public static void toggleCheats() {
         String correctPassword = "JavaQuizGame";
 
         System.out.print("\n          Enter the password to enable cheats: ");
-        scanner.nextLine(); // Consume newline left-over
+        scanner.nextLine(); 
         password = scanner.nextLine();
 
         if (password.equals(correctPassword)) {
