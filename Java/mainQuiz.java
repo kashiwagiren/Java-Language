@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class mainQuiz {
+public class mainQuiz {
     private static int score = 0;
     private static int total_questions = 0;
     private static int scoreViewing = 0;
@@ -9,7 +9,12 @@ class mainQuiz {
     public static boolean colorsEnabled = true;
     public static Scanner scanner = new Scanner(System.in);
     
-    private static final String ASCII_ART = " ____  _     _  ____    _____ ____  _      _____\n/  _ \\/ \\ /\\/ \\/_   \\  /  __//  _ \\/ \\__/|/  __/\n| / \\|| | ||| | /   /  | |  _| / \\/|| |\\/|||  \\  \n| \\_\\|| \\_/|| |/   /_  | |_//| |-||| |  |||  /_ \n\\____\\\\____/\\_/\\____/  \\____\\\\_/ \\|\\_/  \\|\\____\\";
+    private static final String[] ASCII_ART = { " ____  _     _  ____    _____ ____  _      _____",
+                                                "/  _ \\/ \\ /\\/ \\/_   \\  /  __//  _ \\/ \\__/|/  __/",
+                                                "| / \\|| | ||| | /   /  | |  _| / \\/|| |\\/|||  \\  ",
+                                                "| \\_\\|| \\_/|| |/   /_  | |_//| |-||| |  |||  /_ ",
+                                                "\\____\\\\____/\\_/\\____/  \\____\\\\_/ \\|\\_/  \\|\\____\\" 
+                                              };
     public static final int PASSING_SCORE_PER_LEVEL = 3;
 
     public static void main(String[] args) {
@@ -18,7 +23,9 @@ class mainQuiz {
         while (true) {
             System.out.print("\033[H\033[2J");
             System.out.flush();
-            System.out.println((colorsEnabled ? "\u001B[36m" + ASCII_ART + "\u001B[0m" : ASCII_ART));
+            for (String line : ASCII_ART) {
+                System.out.println(colorsEnabled ? "\u001B[36m" + line + "\u001B[0m" : line);
+            }
             System.out.println(" _______________________________________");
             System.out.println("/                                       \\");
             System.out.println("|                                       |");
@@ -37,6 +44,7 @@ class mainQuiz {
                 switch (choice) {
                     case 's':
                         total_questions = 0;
+                        getNameFromUser(scanner);
                         startGame();
                         break;
                     case 'i':
@@ -67,41 +75,54 @@ class mainQuiz {
         }
     }
 
+    public static String getNameFromUser(Scanner scanner) {
+        System.out.print("\033[H\033[2J");
+        System.out.print("Name of the player: ");
+        String name = scanner.nextLine();
+        return name;
+    }
+
     public static void startGame() {
         int level;
         Scanner scanner = new Scanner(System.in);
+        String name = getNameFromUser(scanner);
         while (true) {
-            level = displayLevelMenu(scanner);
-            if (level != -1) {
+            level = displayLevelMenu(scanner, name);
+            if (level == 0) {
                 break;
-            }
-            System.out.println("\n+----------------------------------------+");
-            System.out.println("|  Invalid input. Please choose a level  |");
-            System.out.println("|    between 1 - 3.                      |");
-            System.out.println("+----------------------------------------+");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } else if (level == -1) {
+                System.out.println("\n+----------------------------------------+");
+                System.out.println("|  Invalid input. Please choose a level  |");
+                System.out.println("|  between 1 - 3 or enter 0 to go back.  |");
+                System.out.println("+----------------------------------------+");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                continue;
+            } else {
+                gameQuestions(level);
             }
         }
-    
-        gameQuestions(level);
     }
     
-    private static int displayLevelMenu(Scanner scanner) {
+    private static int displayLevelMenu(Scanner scanner, String name) {
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("/----------------------------------------\\");
+        System.out.println("     Welcome, " + name + "                       ");
         System.out.println("+----------------------------------------+");
         System.out.println("|    1. " + (colorsEnabled ? "\u001B[92mEasy\u001B[0m" : "Easy") + "                             |");
         System.out.println("|    2. " + (colorsEnabled ? "\u001B[94mNormal\u001B[0m" : "Normal") + "                           |");
         System.out.println("|    3. " + (colorsEnabled ? "\u001B[91mHard\u001B[0m" : "Hard") + "                             |");
+        System.out.println("|                                        |");
+        System.out.println("|    0. Go back to menu                  |");
         System.out.println("\\----------------------------------------/");
         System.out.print("\nSelect choice of difficulty (1-3): ");
     
         String input = scanner.next();
-        if (input.matches("[1-3]")) {
+        if (input.matches("[0-3]")) {
             return Integer.parseInt(input);
         }
         return -1;
@@ -370,13 +391,16 @@ public static void gameQuestions(int level) {
             break;
 
         default:
-            System.out.println("\nInvalid. Please choose a level between 1 and 3.");
+            System.out.println("\n+----------------------------------------+");
+            System.out.println("|  Invalid input. Please choose a level  |");
+            System.out.println("|  between 1 - 3 or enter 0 to go back.  |");
+            System.out.println("+----------------------------------------+");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            startGame();
+            displayLevelMenu(scanner, null);
             break;
     }
     
@@ -569,16 +593,16 @@ public static void openSettings() {
     
     while (true) {
         System.out.print("\033[H\033[2J");
-        System.out.flush();
-        System.out.println(" ______________________________________________");
-        System.out.println("/                                              \\");
-        System.out.println("|                                              |\n|         Settings                             |\n|                                              |");
-        System.out.println("|                                              |");
-        System.out.println("|         Press '1' For Cheats (" + (cheatsEnabled ? "\u001B[31mEnabled\u001B[0m" : "Disabled") + ")      |");
-        System.out.println("|         Press '2' For Colors (" + (colorsEnabled ? "\u001B[91mE\u001B[0m\u001B[92mn\u001B[0m\u001B[93ma\u001B[0m\u001B[94mb\u001B[0m\u001B[95ml\u001B[0m\u001B[96me\u001B[0m\u001B[90md\u001B[0m" : "Disabled") + ")       |");
-        System.out.println("|                                              |\n|         Press 'M' To Return to Menu          |    ");
-        System.out.print("|                                              |\n|                                              |\n");
-        System.out.println("\\______________________________________________/ ");
+        System.out.flush();                                                    
+        System.out.println("                                               ");
+        System.out.println("                                               ");
+        System.out.println("                                               \n          Settings                              \n                                                ");
+        System.out.println("                                                ");
+        System.out.println("          Press '1' For Cheats (" + (cheatsEnabled ? "\u001B[31mEnabled\u001B[0m" : "Disabled") + ")       ");
+        System.out.println("          Press '2' For Colors (" + (colorsEnabled ? "\u001B[91mE\u001B[0m\u001B[92mn\u001B[0m\u001B[93ma\u001B[0m\u001B[94mb\u001B[0m\u001B[95ml\u001B[0m\u001B[96me\u001B[0m\u001B[90md\u001B[0m" : "Disabled") + ")        ");
+        System.out.println("                                                \n          Press 'M' To Return to Menu               ");
+        System.out.print("                                                \n                                                \n");
+        System.out.println("                                                ");
         System.out.print("\n          -> ");
         choice = scanner.next().charAt(0);
         choice = Character.toLowerCase(choice);
