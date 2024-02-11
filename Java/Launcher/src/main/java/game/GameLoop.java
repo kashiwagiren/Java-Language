@@ -4,7 +4,7 @@
  */
 package game;
 
-import game.Game;
+// import game.Game;
 
 public class GameLoop implements Runnable {
     private Game game;
@@ -13,7 +13,7 @@ public class GameLoop implements Runnable {
     private final double updateRate = 1.0d/60.0d;
     
     // private long nextStatTime;
-    private int fps, ups;
+    // private int fps, ups;
     
     public GameLoop(Game game) {
         this.game = game;
@@ -55,11 +55,11 @@ public class GameLoop implements Runnable {
     
     private void update() {
         game.update();
-        ups++;
+        // ups++;
     }
     
     private void render() {
         game.render();
-        fps++;
+        // fps++;
     }
 }
