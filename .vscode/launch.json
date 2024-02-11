@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launcher",
+            "request": "launch",
+            "mainClass": "launcher.Launcher",
+            "projectName": "Launcher"
+        },
+        {
+            "type": "java",
             "name": "mainQuiz",
             "request": "launch",
             "mainClass": "mainQuiz",
