@@ -1,13 +1,21 @@
-public class Matrices {
-    public static void main(String args[]) {
-        int[] matrix1 = {1, 3, 4, 2, 4, 3, 3, 4, 5};
-		int[] matrix2 = {1, 3, 4, 2, 4, 3, 1, 2, 4};
-		int matrix3;
+package Java;
 
-		System.out.println("Sum of 2 Matrices: ");
-		for(int i=0; i<=8; i++){
-			matrix3 = matrix1[i] + matrix2[i];
-			System.out.print(matrix3 + ", ");
-		}
+public class Matrices {
+
+    public static void main(String[] args) {
+        
+        int x[][] = { {1, 1, 1}, {1, 1, 1}, {1, 1, 1}};
+        int y[][] = { {4, 4, 4}, {4, 4, 4}, {4, 4, 4}};
+
+        int z[][] = new int[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                z[i][j] = x[i][j] + y[i][j];
+
+                System.out.println(z[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
