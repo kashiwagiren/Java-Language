@@ -1,1 +1,1 @@
-for my java school projects
+This is where I upload my Java files.
